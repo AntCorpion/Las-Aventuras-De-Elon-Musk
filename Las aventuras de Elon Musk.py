@@ -21,50 +21,15 @@ Maduro = {
     "Fuerza": 1.2,
 }  
 
-EntrenamientoOPelea = input("Quieres entrenarle a Elon antes de pelear contra maduro? : ")
-
-
-if(EntrenamientoOPelea == "pelea"):
+msg  = ''' 
+    Elon Musk Se encuentra sentado en su silla trabajando tranquilamente en su computadora, 
+    hasta que recuerda que un dia el tenia que pelear contra Mark Zuckemberg, y se olvidó de esto.
     
- while True: 
+    Dijo que iba a pelear, pero tendria que preparse antes, pero depende de ti que pelee contra un mini peleador, en este caso Nicolas Maduro, para seguir adelante y llegar a Mark Zuckemberg
+    Tu elijes:
+        1. Preparse"
+        2. Pelear"
 
-        if(Elon["Fuerza"] > 1.5 or Elon["Velocidad"] > 100 or Elon["Puño"] > 25 or Elon["Patada"]):
-            break
+    Tu elijes: '''
 
-        # Eleccion
-        
-        DominadaOSentadillas = input("Quieres hacer ?: ")
-
-    
-
-## PELEA
-    
-while True:
-
-    if(EntrenamientoOPelea == "No" or Elon["Fuerza"] > 1.5 or Elon["Velocidad"] > 100 or Elon["Puño"] > 25 or Elon["Patada"]):
-
-        # Condicion para el final
-
-        if(Elon["Vida"] < 0 or Maduro["Vida"] < 0):
-            break
-        
-        # Patada o Puño
-
-        eleccion = input ("Tienes que elejir entre dar una Patada o un Puño: ")
-
-        # Golpe
-
-        if(eleccion == "Patada"):
-            Maduro["Vida"] -= Elon["Patada"]
-        if(eleccion == "Puño"): 
-            Maduro["Vida"] -= Elon["Puño"] 
-        
-        # Resultados Maduro
-
-        print(f"Maduro: {Maduro}")
-
-        # Golpe Maduro & Resultados Elon
-
-        Elon["Vida"] -= random.choice([Maduro["Patada"], Maduro["Puño"]])
-
-        print(f"Elon: {Elon}")
+inicio = input(msg)

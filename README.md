@@ -4,7 +4,7 @@
 Este juego cuenta como tu, siendo Elon Musk, te preparas para pelear contra Mark Zuckemberg, que sera un enemigo poderoso.
 
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://i0.wp.com/conciliarpost.com/wp-content/uploads/2014/09/breaking_bad_fb_banner_by_cartoonperson-d5628z3.png?fit=851%2C314&ssl=1)
 
 
 ## Badges
@@ -18,7 +18,9 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 
 ## Authors
 
-- [@octokatherine](https://www.github.com/octokatherine)
+- [@324657432] 
+- [@0scarrqm]
+- [@antcorpion]
 
 
 # Las aventuras de Elon musk
@@ -36,16 +38,15 @@ Este juego cuenta como tu, siendo Elon Musk, te preparas para pelear contra Mark
 Install my-project with npm
 
 ```bash
-  npm install my-project
-  cd my-project
+  Abri mi proyecto desde Python (Visual Studio Code preferentemente)
 ```
     
 ## Deployment
 
-To deploy this project run
+Este proyecto se ejecuta desde Python
 
 ```bash
-  npm run deploy
+  npm run Las aventuras de Elon Musk
 ```
 
 
@@ -54,18 +55,14 @@ To deploy this project run
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-## Demo
-
-Insert gif or link to demo
-
-
 ## FAQ
 
 #### Question 1
 
-Answer 1
+Este juego es fachero? 
+Si si es
 
 #### Question 2
 
-Answer 2
+Como se llama? Las aventuras de Elon Musk
 

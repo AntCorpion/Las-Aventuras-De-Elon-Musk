@@ -11,6 +11,7 @@ Elon = {
     "Vida": 100,
     "Velocidad": 0,
     "Fuerza": 1,
+    "Energia": 100,
 }   
 
 Maduro = {
@@ -33,3 +34,6 @@ msg  = '''
     Tu elijes: '''
 
 inicio = input(msg)
+
+if(inicio == "1"):
+    print("Preparate para entrenar. Tienes ciertos entrenamientos y ejercicios para realizar.")

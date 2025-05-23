@@ -9,16 +9,19 @@ Elon = {
     "Puño": 1,
     "Patada": 1.5,
     "Vida": 100,
-    "Velocidad": 0,
-    "Fuerza": 1,
+    "Velocidad": 14,
+    "Fuerza": 15,
+    "Energia":100,
 }   
 
-Maduro = {
+Mark = {
     "Puño": 10,
     "Patada": 15,
     "Vida": 100,
     "Velocidad": 1,
     "Fuerza": 1.2,
+    "Energia":100,
+
 }  
 
 msg  = ''' 
@@ -33,3 +36,16 @@ msg  = '''
     Tu elijes: '''
 
 inicio = input(msg)
+
+def lucha(personaje1, personaje2):
+    
+    Decision = input("Queres Puño o Patada? : ")
+
+    personaje2["Vida"] -= personaje1[Decision] * personaje1["Velocidad"]
+    personaje1["Energia"] -= personaje1[Decision] * personaje1["Velocidad"]
+
+
+lucha(Elon,Mark)
+
+print(Mark)
+print(Elon)

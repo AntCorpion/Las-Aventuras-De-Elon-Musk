@@ -36,8 +36,12 @@ def mensajes1(personaje):
         msg = '''
     Elon mira desde lejos una luz blanca 
         '''
-    return msg
-
+    else:
+        msg = '''
+    NOT 
+        '''
+    print(msg)
+    
 def mensajes2(personaje):
     if personaje["Vida"]>70:
         msg = '''
@@ -48,13 +52,22 @@ def mensajes2(personaje):
         msg = '''
     Mark parece estar cansado
     '''
-    return msg
+    else:
+        msg = '''
+    NOT 
+        '''
+    print(msg)
             
-def lucha(personaje1,personaje2):
-    DesicionMark = random.choice(["Patada","Puño"])
-    print(DesicionMark)
+def lucha(personaje1,personaje2,DesicionElon='no'):
+    if DesicionElon is["Patada","Puño"]:
+        personaje1["Vida"] -= personaje2[DesicionElon] * personaje2["Velocidad"]
 
-    personaje1["Vida"] -= personaje2[DesicionMark] * personaje2["Velocidad"]
+        print(f"{personaje2['Nombre']} golpea con {DesicionElon}") 
+    else:
+        DesicionMark = random.choice(["Patada","Puño"])
+        print(DesicionMark)
+        personaje1["Vida"] -= personaje2[DesicionMark] * personaje2["Velocidad"]
+        print(f" {personaje2} golpea con {DesicionMark}")
     
     print(Mark)
     print(Elon)
@@ -73,7 +86,7 @@ msg  = '''
 
 inicio = input(msg)
 
-while Elon["Vida"] > 0: 
+while Elon["Vida"] > 0 and Mark["Vida"] > 0: 
 
     msg = '''
         Elon se siente abrumado por el ensordecedor ruido de la hinchada del publico,
@@ -86,12 +99,19 @@ while Elon["Vida"] > 0:
             
         Tu elijes: '''
 
-    DesicionElon = input(msg)
+    DesicionElon = input(msg).capitalize()
 
 
     print("        Aqui viene mark!")
 
     lucha(Elon,Mark)
-    print(mensajes1(Elon))
-    lucha(Mark,Elon)
-    print(mensajes2(Mark))
+    mensajes1(Elon)
+    lucha(Mark,Elon,DesicionElon)
+    mensajes2(Mark)
+
+print("Game Over")
+
+if Elon["Vida"] > Mark["Vida"] :
+    print("Gano Elon")
+else:
+    print("Gano Mark")

@@ -11,8 +11,10 @@ Elon = {
     "Vida": 100,
     "Velocidad": 1,
     "Fuerza": 1,
+
     "Energia":100,
     "Nombre": "Elon",
+
 }   
 
 Mark = {
@@ -191,3 +193,4 @@ def entrenar():
                 print("Gano Elon")
             else:
                 print("Gano Mark")
+

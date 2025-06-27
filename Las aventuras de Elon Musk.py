@@ -25,34 +25,23 @@ Mark = {
     "Nombre": "Mark",
 
 }  
+### Funciones
 
-msg  = ''' 
-    Elon se encuentra sentado en su silla trabajando tranquilamente en su computadora, 
-    hasta que recuerda que un dia el tenia que pelear contra Mark, y entonces se puso las pilas.
-    
-    Dijo que iba a pelear, pero tendria que preparse antes, pero depende de ti que pelee contra un mini peleador, en este caso Nicolas Maduro, para seguir adelante y llegar a Mark Zuckemberg
-    Tu elijes:
+def validar(orden, opciones):
 
-        1. "Preparse"
-        2. "Pelear"
-
-    Tu elijes: '''
-
-inicio = input(msg)
-
-if inicio == "Prepararse":
-
-    def mostrar_estadisticas():
-        print("\n--- ESTADÍSTICAS DE ELON ---")
-    for clave, valor in Elon.items():
-        print(f"{clave}: {valor}")
-        print("-----------------------------\n")
+    while orden is not opciones:
+        print (f"Las opciones con {opciones}")
+        orden = input("Ingrese nuevamente : ")
+    return orden
 
 def ejercicio_realizado():
     mostrar_estadisticas()
     continuar = input("¿Querés seguir entrenando o ya pelear?\n1. Seguir entrenando\n2. Pelear\nTu elección: ")
-    return continuar == "1"
-
+    if continuar == "1" or continuar == "seguir entrenando" or continuar == "seguir" or continuar == "entrenar":
+        return True
+    else:
+        return False
+         
 def entrenar():
     entrenando = True
     while entrenando:
@@ -111,12 +100,20 @@ def entrenar():
                 Elon["Fuerza"] += 1
                 Elon["Velocidad"] += 1
                 Elon["Energia"] -= 5
+        else:
+            print("Salir.")
+            mostrar_estadisticas()
 
+             
         entrenando = ejercicio_realizado()
-    
-    else:
-    
-        def mensajes1(personaje):
+
+def mostrar_estadisticas():
+    print("\n--- ESTADÍSTICAS DE ELON ---")
+    for clave, valor in Elon.items():
+        print(f"{clave}: {valor}")
+        print("-----------------------------\n")
+
+def mensajes1(personaje):
             if personaje["Vida"]>70:
                 msg = '''
             se siente fuerte y se rie de su oponente 
@@ -132,39 +129,60 @@ def entrenar():
                 '''
             print(msg)
             
-        def mensajes2(personaje):
-            if personaje["Vida"]>70:
-                msg = '''
-            Mark no baja su mirada
-            '''
+def mensajes2(personaje):
+    if personaje["Vida"]>70:
+            msg = '''
+    Mark no baja su mirada
+    '''
                 
-            if personaje["Vida"]<70:
-                msg = '''
-            Mark parece estar cansado
-            '''
-            else:
-                msg = '''
-            NOT 
-                '''
-            print(msg)
+    if personaje["Vida"]<70:
+        msg = '''
+    Mark parece estar cansado
+    '''
+    else:
+        msg = '''
+        NOT 
+        '''
+    print(msg)
                     
-        def lucha(personaje1,personaje2,DesicionElon='no'):
-            if DesicionElon is["Patada","Puño"]:
-                personaje1["Vida"] -= personaje2[DesicionElon] * personaje2["Velocidad"]
-
-                print(f"{personaje2['Nombre']} golpea con {DesicionElon}") 
-            else:
-                DesicionMark = random.choice(["Patada","Puño"])
-                print(DesicionMark)
-                personaje1["Vida"] -= personaje2[DesicionMark] * personaje2["Velocidad"]
-                print(f" {personaje2} golpea con {DesicionMark}")
+def lucha(personaje1,personaje2,DesicionElon='no'):
+    if DesicionElon is["Patada","Puño"]:
+        personaje1["Vida"] -= personaje2[DesicionElon] * personaje2["Velocidad"]
+        print(f"{personaje2['Nombre']} golpea con {DesicionElon}") 
+    else:
+        DesicionMark = random.choice(["Patada","Puño"])
+        print(DesicionMark)
+        personaje1["Vida"] -= personaje2[DesicionMark] * personaje2["Velocidad"]
+        print(f" {personaje2} golpea con {DesicionMark}")
             
-            print(Mark)
-            print(Elon)
-            
-            while Elon["Vida"] > 0 and Mark["Vida"] > 0: 
+    print(Mark)
+    print(Elon)
 
-                msg = '''
+##Juego
+
+msg  = ''' 
+    Elon se encuentra sentado en su silla trabajando tranquilamente en su computadora, 
+    hasta que recuerda que un dia el tenia que pelear contra Mark, y entonces se puso las pilas.
+    
+    Dijo que iba a pelear, pero tendria que preparse antes, pero depende de ti que pelee contra un mini peleador, en este caso Nicolas Maduro, para seguir adelante y llegar a Mark Zuckemberg
+    Tu elijes:
+
+        1. "Prepararse"
+        2. "Pelear"
+
+    Tu elijes: '''
+
+inicio = input(msg).lower()
+validar(inicio, ["Prepararse","Pelear"])
+
+if inicio == "prepararse":
+     mostrar_estadisticas()
+     entrenar()
+
+if inicio == "pelear":
+    while Elon["Vida"] > 0 and Mark["Vida"] > 0: 
+
+        msg = '''
                     Elon se siente abrumado por el ensordecedor ruido de la hinchada del publico,
                     pero no puede distraerse, debe de empezar a pelear contra su contrincante, Mark
                     
@@ -175,19 +193,19 @@ def entrenar():
                         
                     Tu elijes: '''
 
-                DesicionElon = input(msg).capitalize()
+        DesicionElon = input(msg).capitalize()
 
 
-                print("        Aqui viene mark!")
+        print("        Aqui viene mark!")
 
-                lucha(Elon,Mark)
-                mensajes1(Elon)
-                lucha(Mark,Elon,DesicionElon)
-                mensajes2(Mark)
+        lucha(Elon,Mark)
+        mensajes1(Elon)
+        lucha(Mark,Elon,DesicionElon)
+        mensajes2(Mark)
 
-            print("Game Over")
+        print("Game Over")
 
-            if Elon["Vida"] > Mark["Vida"] :
-                print("Gano Elon")
-            else:
-                print("Gano Mark")
+        if Elon["Vida"] > Mark["Vida"] :
+            print("Gano Elon")
+        else:
+            print("Gano Mark")
